@@ -1,0 +1,65 @@
+/* What does the app's SQL look like? */
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT);
+
+CREATE TABLE Fitness(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT,
+    duration INTEGER);
+    
+INSERT INTO Fitness (type, duration)
+    VALUES ("yoga", "20");
+INSERT INTO Fitness (type, duration)
+    VALUES ("HIIT", "15");
+INSERT INTO Fitness (type, duration)
+    VALUES ("dancing", "30");
+INSERT INTO Fitness (type, duration)
+    VALUES ("weight_lifting", "45");
+INSERT INTO Fitness (type, duration)
+    VALUES ("stairmaster", "25");
+    
+ALTER TABLE Fitness ADD date integer;
+SELECT * FROM Fitness;
+
+UPDATE Fitness SET date = "2023-01-01"
+WHERE id = 1;
+
+UPDATE Fitness SET date = "2023-01-02"
+WHERE id = 2;
+
+UPDATE Fitness SET date = "2023-01-03"
+WHERE id = 3;
+
+UPDATE Fitness SET date = "2023-01-06"
+WHERE id = 4;
+
+UPDATE Fitness SET date = "2023-01-07"
+WHERE id = 5;
+
+SELECT * FROM Fitness;
+
+ALTER TABLE Fitness ADD log TEXT;
+SELECT * FROM Fitness;
+
+
+UPDATE Fitness SET log = "Took it slow but was great"
+WHERE id = 1;
+
+UPDATE Fitness SET log = "No pain No gain!!"
+WHERE id = 2;
+
+UPDATE Fitness SET log = "I love dancing!! This was the best"
+WHERE id = 3;
+
+UPDATE Fitness SET log = "Upper body is my least favorite but its done!"
+WHERE id = 4;
+
+UPDATE Fitness SET log = "Booty gains!!"
+WHERE id = 5;
+
+SELECT * FROM Fitness;
+
+
+DELETE FROM Fitness WHERE duration = 15;
+SELECT * FROM Fitness;
